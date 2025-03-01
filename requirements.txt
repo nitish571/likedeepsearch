@@ -1,0 +1,3 @@
+together
+crewai_tools
+gradio
