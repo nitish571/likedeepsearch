@@ -5,6 +5,25 @@ from crewai_tools import SerperDevTool
 search_tool = SerperDevTool(n_results=5)
 
 def reasoning_loop(query, research_plan):
+    """
+    Simulates a reasoning loop to gather and synthesize information for a given research query.
+
+    This function takes a research query and a research plan as input, breaks down the plan into individual steps,
+    and iteratively searches for relevant information, synthesizes the results, and updates the knowledge buffer.
+    The final output is a comprehensive answer to the original research query.
+
+    Args:
+        query (str): The research query to be answered.
+        research_plan (str): A multi-line string representing the research plan, with each line describing a step.
+
+    Returns:
+        tuple: A tuple containing the final response to the research query and the memory buffer, which stores the
+            synthesis of information gathered at each step.
+
+    Raises:
+        Exception: If an error occurs during the search process.
+    """
+      
     memory_buffer = []
     
     memory_buffer.append(f"Research Plan: {research_plan}")
